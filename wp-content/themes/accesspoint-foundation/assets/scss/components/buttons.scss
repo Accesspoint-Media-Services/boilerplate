@@ -1,12 +1,18 @@
 .button {
-  @include flex-start(row);
+  @include flex-center(row);
   align-items: center;
   gap: rem(20px);
   border-radius: rem(10px);
   padding: rem(12px) rem(17px);
-  color: $white;
+  transition: .6s ease-in-out all;
 
-  &-primary {
-    background: $primary-colour;
+  @each $name, $value in $colours {
+    &-#{$name} {
+      background: $value;
+
+      &:hover {
+        background: rgba($value, .8)
+      }
+    }
   }
 }

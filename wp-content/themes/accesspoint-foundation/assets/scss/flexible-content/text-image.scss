@@ -1,11 +1,63 @@
 .text-image {
-  &__image {
-    img {}
+
+  padding: rem(55px) 0;
+
+  @media (min-width:768px){
+      padding: rem(65px) 0
   }
 
-  &__content {
+  @media (min-width:992px){
+      padding: rem(75px) 0
+  }
+
+  @media (min-width:1200px){
+      padding: rem(90px) 0
+  }
+
+  @media (min-width:1440px){
+      padding: rem(120px) 0
+  }
+
+  &__inner {
+    &.orientation {
+
+      &-right {
+        @include flex-between(column);
+        align-items: center;
+        gap: rem(30px);
+        @media (min-width: 992px) {
+          @include flex-between(row);
+        }
+      }
+
+      &-left {
+        @include flex-between(column);
+        align-items: center;
+        gap: rem(30px);
+        @media (min-width: 992px) {
+          @include flex-between(row-reverse);
+        }
+      }
+
+    }
+
+    &--content {
+      @include flex-start(column);
+      align-items: flex-start;
+      gap: rem(20px);
+    }
+
+    &--title {
+      margin-bottom: rem(0px);
+    }
+
     &--copy {
       @include flex-start(column);
+      align-items: flex-start;
+      gap: rem(20px);
+      p {
+
+      }
     }
   }
 }

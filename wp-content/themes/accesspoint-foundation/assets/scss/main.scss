@@ -38,7 +38,6 @@
 //              |___/                     
 
 @import './layout/container.scss';
-@import './layout/footer.scss';
 
 // _____                                             _       
 // / ____|                                           | |      
@@ -51,6 +50,7 @@
 
 @import './components/backgrounds.scss';
 @import './components/buttons.scss';
+@import './components/pagination.scss';
 
 
 // ____                    ____            _   _                 
@@ -62,6 +62,7 @@
 
 @import './page-sections/header.scss';
 @import './page-sections/hero.scss';
+@import './page-sections/footer.scss';
 
 
 // _____ _           _ _     _         ____            _             _   

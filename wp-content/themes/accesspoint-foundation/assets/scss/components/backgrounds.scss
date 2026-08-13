@@ -1,0 +1,18 @@
+// Use the built in SASS funciton to determine background / colours
+
+@function get-contrast-colour($colour) {
+  @return if(lightness($colour) > 60%, #000, #fff);
+}
+
+.background {
+  @each $name, $value in $colours {
+    &-#{$name} {
+      background: $value;
+      color: get-contrast-colour($value);
+
+      &:hover {
+       
+      }
+    }
+  }
+}

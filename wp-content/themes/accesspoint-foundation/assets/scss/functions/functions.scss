@@ -16,22 +16,3 @@
 
   @return #{$px / $base-font-size}rem;
 }
-
-// Generate padding ammount, based on size selected
-
-@each $size, $values in $padding-sizes {
-
-  // Default padding
-  .padding-#{$size} {
-    padding: map-get($values, default);
-  }
-
-  // Responsive padding at different breakpoints
-  @each $breakpoint, $width in $breakpoints {
-    @media (min-width: $width) {
-      .padding-#{$size} {
-        padding: map-get($values, $breakpoint);
-      }
-    }
-  }
-}

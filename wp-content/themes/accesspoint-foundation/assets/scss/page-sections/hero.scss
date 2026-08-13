@@ -39,6 +39,69 @@
     }
   }
 
+  &-blog {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &__inner {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: rem(20px);
+
+        &--content {
+          @include flex-start(column);
+          gap: rem(20px);
+          position: relative;
+          z-index: 2;
+
+          @media (min-width:992px){
+            flex: 1 1 rem(550px);
+            max-width: rem(550px);
+          }
+
+          @media (min-width:1366px){
+            flex: 1 1 rem(600px);
+            max-width: rem(600px);
+          }
+
+          @media (min-width:1440px){
+            flex: 1 1 rem(705px);
+            max-width: rem(705px);
+          }
+        }
+
+        &--title {
+          color: $primary-colour;
+        }
+
+        &--excerpt {
+          color: $primary-colour;
+        }
+
+        &--date {
+
+        }
+
+        &--image {
+          align-self: stretch;
+          min-height: rem(375px);
+
+          @media (min-width:992px){
+            min-height: rem(450px);
+            flex: 1;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+  }
+
   &-team-members {
     min-height: rem(550px);
     display: flex;

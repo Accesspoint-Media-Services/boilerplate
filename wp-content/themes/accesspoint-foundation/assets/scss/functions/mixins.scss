@@ -9,34 +9,54 @@
 //   }
 
 
-@mixin flex-column($layout) {
-  display: flex;
-   flex-direction: $layout;
+// site container mixin
+
+@mixin center-content($orientation: row) {
+    display: flex;
+    justify-content: center;
+    flex-direction: $orientation;
 }
 
-@mixin flex-start($layout) {
-  display: flex;
-  flex-direction: $layout;
-  align-items: flex-start;
+@mixin flex-start($orientation: row){
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: $orientation;
+}
+@mixin flex-end($orientation: row){
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: $orientation;
 }
 
-@mixin flex-center($layout) {
-  display: flex;
-  flex-direction: $layout;
-  justify-content: center;
-  align-items: center;
+@mixin flex-center($orientation: row){
+    display: flex;
+    justify-content: center;
+    flex-direction: $orientation;
 }
 
-@mixin flex-end($layout) {
-  display: flex;
-   flex-direction: $layout;
-  justify-content: flex-end;
-  align-items: flex-end;
+@mixin flex-between($orientation:row){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: $orientation;
 }
 
-@mixin flex-between($layout) {
-  display: flex;
-  flex-direction: $layout;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+ @mixin background-image(){
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 100%; 
+    }
+
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+ }

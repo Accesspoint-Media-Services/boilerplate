@@ -19,8 +19,17 @@
     gap: rem(30px);
   }
 
-  &__logo a img {
-    width: min(100%, rem(200px));
+  &__logo  {
+    a {
+      img {
+        width: min(100%, rem(200px));
+        transition: .6s ease-in-out all;
+
+        &:hover {
+          opacity: 0.65;
+        }
+      }
+    }
   }
 
   &__navigation {
