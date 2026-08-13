@@ -1,0 +1,37 @@
+// SCSS Function to convert px to rem
+@function rem($px, $base-font-size: 16px) {
+  @if (unitless($px) or unitless($base-font-size)) {
+    @error "Both $px and $base-font-size must have units (e.g., 'px').";
+  }
+
+  @return #{$px / $base-font-size}rem;
+}
+
+
+// SCSS Function to convert px to rem
+@function rem($px, $base-font-size: 16px) {
+  @if (unitless($px) or unitless($base-font-size)) {
+    @error "Both $px and $base-font-size must have units (e.g., 'px').";
+  }
+
+  @return #{$px / $base-font-size}rem;
+}
+
+// Generate padding ammount, based on size selected
+
+@each $size, $values in $padding-sizes {
+
+  // Default padding
+  .padding-#{$size} {
+    padding: map-get($values, default);
+  }
+
+  // Responsive padding at different breakpoints
+  @each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+      .padding-#{$size} {
+        padding: map-get($values, $breakpoint);
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.hero {
+  min-height: rem(550px);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  // Adds an overlay to the hero
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba($primary-colour, .25);
+    z-index: 1;
+  }
+
+  &__content {
+    @include flex-start(column);
+    gap: rem(20px);
+    color: $white;
+    position: relative;
+    z-index: 2;
+
+    &--title {
+      color: $white;
+    }
+
+    &--copy {
+      p {
+        color: $white;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .button {
+      &-primary {}
+    }
+  }
+
+  &-team-members {
+    min-height: rem(550px);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    // Adds an overlay to the hero
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba($primary-colour, .25);
+      z-index: 1;
+    }
+
+    &__content {
+      @include flex-start(column);
+      gap: rem(20px);
+      color: $white;
+      position: relative;
+      z-index: 2;
+
+      &--title {
+        color: $white;
+      }
+
+      &--copy {
+        p {
+          color: $white;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .button {
+        &-primary {}
+      }
+    }
+  }
+}

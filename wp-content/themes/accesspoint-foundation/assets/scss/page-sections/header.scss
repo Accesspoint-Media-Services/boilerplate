@@ -1,0 +1,310 @@
+// ==========================================================================
+// Site Header + Navigation
+// BEM: .site-header, .nav-toggle, .nav, .nav__list, .nav__item, .nav__link,
+//      .nav__submenu, .nav__toggle, .nav-overlay
+//
+// Mobile-first: base .nav styles below are the MOBILE menu.
+// Desktop overrides live in the single @media (min-width: 1200px) block.
+// ==========================================================================
+
+.site-header {
+
+  @include background($off-white, $primary-colour);
+  padding: rem(45px) 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(30px);
+  }
+
+  &__logo a img {
+    width: min(100%, rem(200px));
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    // ------------------------------------------------------------------
+    // Hamburger toggle button (visible by default, hidden on desktop)
+    // ------------------------------------------------------------------
+    
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: rem(26px);
+      height: rem(18px);
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      z-index: 60;
+
+      &__bar {
+        display: block;
+        height: rem(2px);
+        width: 100%;
+        background: $primary-colour;
+        transition: all 0.35s ease-in-out;
+      }
+
+      &--active {
+        .nav-toggle__bar {
+          &:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+          &:nth-child(2) { opacity: 0; }
+          &:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+      }
+    }
+
+    // ------------------------------------------------------------------
+    // Nav — mobile base styles (off-canvas panel, opens via .nav--active)
+    // ------------------------------------------------------------------
+    .nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: rem(300px);
+      max-width: 85vw;
+      height: 100vh;
+      padding: rem(135px) rem(35px) rem(25px);
+      background: $off-white;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.35s ease-in-out;
+      z-index: 55;
+
+      &--active {
+        transform: translateX(0);
+      }
+
+      // Reveal nav items once the menu is open (stagger delay set via JS)
+      &--active .nav__item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: rem(22px);
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      &__item {
+        position: relative;
+        margin-right: 0;
+        border-bottom: rem(1px) solid rgba($white, 0.1);
+        opacity: 0;
+        transform: translateY(rem(8px));
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+
+        // Indent nested levels so hierarchy is visible on mobile
+        &--sub .nav__link {
+         
+        }
+
+        &--sub &--sub .nav__link {
+        }
+
+        &--has-children > .nav__link {
+          
+        }
+
+        &--open {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+
+        &--open > .nav__submenu {
+          display: flex;
+          flex-direction: column;
+          gap: rem(11px);
+          margin-top: rem(11px);
+          padding-left: rem(11px);
+        }
+
+        &--current > .nav__link {
+          color: $secondary-colour;
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $primary-colour;
+        text-decoration: none;
+        transition: color 0.35s ease-in-out;
+
+        &:hover,
+        &:focus {
+          color: $secondary-colour;
+        }
+      }
+
+      &__submenu {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      &__toggle {
+        cursor: pointer;
+
+        i {
+          transition: .6s ease-in-out all;
+        }
+
+        &[aria-expanded="true"] .nav__toggle-icon {
+          transform: translate(-50%, -35%) rotate(-135deg);
+        }
+
+      }
+
+      &__toggle-icon {
+          i {
+            color: $primary-colour;
+          }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// Dark overlay behind the mobile menu
+// (appended directly to <body> via JS, so it lives outside .site-header)
+// --------------------------------------------------------------------------
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($primary-colour, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease-in-out;
+  z-index: 54;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+// --------------------------------------------------------------------------
+// Desktop overrides (hover / focus reveals nested .nav__submenu)
+// --------------------------------------------------------------------------
+
+@media (min-width: 1200px) {
+  .site-header__navigation {
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav {
+      position: static;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      padding-top: 0;
+      background: none;
+      overflow: visible;
+      transform: none;
+      transition: none;
+      z-index: auto;
+      padding: 0;
+
+      &__list {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &__item {
+        border-bottom: 0;
+        opacity: 1;
+        transform: none;
+        transition: none;
+        transition-delay: 0s !important; // clears any inline delay set by JS on mobile
+
+        &:not(:last-child) {
+          margin-right: 1.75rem;
+        }
+
+        &--has-children > .nav__link {
+          padding-right: 0;
+         
+          &::after {
+            content: '';
+            display: inline-block;
+            width: rem(6px);
+            height:rem(6px);
+            margin-left: rem(6px);
+            border-right: rem(2px) solid currentColor;
+            border-bottom: rem(2px) solid currentColor;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      &__link {
+        padding: 0.5rem 0;
+        color: $primary-colour;
+      }
+
+      &__submenu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: rem(220px);
+        background: #fff;
+        box-shadow: 0 rem(10px) rem(30px) rgba($primary-colour, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(rem(6px));
+        transition: all 0.35s ease-in-out;
+        z-index: 50;
+
+        .nav__submenu {
+          top: 0;
+          left: 100%;
+        }
+
+        .nav__link {
+          padding: 0.65rem 1rem;
+          white-space: nowrap;
+        }
+      }
+
+      &__item:hover > .nav__submenu,
+      &__item--open > .nav__submenu,
+      &__item:focus-within > .nav__submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      &__toggle {
+        display: none;
+      }
+    }
+  }
+
+  .nav-overlay {
+    display: none;
+  }
+}

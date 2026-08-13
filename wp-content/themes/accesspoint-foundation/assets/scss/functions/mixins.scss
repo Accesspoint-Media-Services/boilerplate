@@ -1,0 +1,42 @@
+@mixin background($background-color, $font-color) {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+// Usage example
+// .button {
+//     @include background($primary-colour, $white);
+//   }
+
+
+@mixin flex-column($layout) {
+  display: flex;
+   flex-direction: $layout;
+}
+
+@mixin flex-start($layout) {
+  display: flex;
+  flex-direction: $layout;
+  align-items: flex-start;
+}
+
+@mixin flex-center($layout) {
+  display: flex;
+  flex-direction: $layout;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-end($layout) {
+  display: flex;
+   flex-direction: $layout;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@mixin flex-between($layout) {
+  display: flex;
+  flex-direction: $layout;
+  justify-content: space-between;
+  align-items: flex-start;
+}

@@ -1,0 +1,33 @@
+// _container.scss
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: rem(15px);
+
+  @each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+      max-width: map-get($container-max-widths, $breakpoint);
+
+      @if $breakpoint == xl {
+        // padding-inline: calc(1rem + 2vw);
+      }
+    }
+  }
+}

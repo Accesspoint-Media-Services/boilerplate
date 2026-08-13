@@ -1,0 +1,12 @@
+.button {
+  @include flex-start(row);
+  align-items: center;
+  gap: rem(20px);
+  border-radius: rem(10px);
+  padding: rem(12px) rem(17px);
+  color: $white;
+
+  &-primary {
+    background: $primary-colour;
+  }
+}
