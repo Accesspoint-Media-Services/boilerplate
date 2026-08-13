@@ -12,10 +12,6 @@ get_header();
 		<?php get_template_part ('template-parts/site-wide/content', 'hero') ;?>
 		<?php get_template_part( 'page-sections/body/team-members/archive' ); ?>
 
-
-
-
-		
 	</main>
 
 <?php
