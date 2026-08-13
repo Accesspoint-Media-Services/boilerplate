@@ -5,6 +5,7 @@
 
 <footer class="site-footer">
 	<div class="site-footer__inner container">
+		
 		<div class="site-footer__inner--legal">
 			<?php if ( ! empty( $site_logo ) ) : ?>
 				<div class="site-footer__inner--logo">
@@ -18,23 +19,48 @@
 			</div>
 		</div>
 		
-			<?php if( have_rows('footer_links', 'options') ): ?>
-				<div class="site-footer__inner--links">
-					<ul class="site-footer__inner--link-list">
-						<?php while( have_rows('footer_links', 'options') ) : the_row(); ?>
-							<?php $link = get_sub_field('link', 'options');
-								if( $link ): 
-									$link_url = $link['url'];
-									$link_title = $link['title'];
-									$link_target = $link['target'] ? $link['target'] : '_self';
-								?>
-								<li class="site-footer__inner--link-item"><a class="" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></li>
-							<?php endif; ?>
-						<?php endwhile; ?>
-					</ul>
-				</div>
-			<?php endif; ?>
-		</div>
+		<?php if( have_rows('footer_links', 'options') || have_rows('social_links', 'options') ): ?>
+			<div class="site-footer__inner--links">
+
+				<?php if( have_rows('footer_links', 'options') ): ?>
+					<div class="site-footer__inner--page-links">
+						<ul class="site-footer__inner--link-list">
+							<?php while( have_rows('footer_links', 'options') ) : the_row(); ?>
+								<?php $link = get_sub_field('link', 'options');
+									if( $link ): 
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<li class="site-footer__inner--link-item"><a class="" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></li>
+								<?php endif; ?>
+							<?php endwhile; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
+				<?php if( have_rows('social_links', 'options') ): ?>
+					<div class="site-footer__inner--social">
+						<ul class="site-footer__inner--social-list">
+							<?php while( have_rows('social_links', 'options') ) : the_row(); 
+								$icon = get_sub_field('social_icon', 'options');
+							?>
+								<?php $link = get_sub_field('link', 'options');
+									if( $link ): 
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+									?>
+									<li class="site-footer__inner--social-item"><a class="" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><i class="<?php echo esc_attr( $icon ); ?>"></i><?php echo esc_html( $link_title ); ?></li></a>
+								<?php endif; ?>
+							<?php endwhile; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+
+			</div>
+		<?php endif; ?>
+
 	</div>
 </footer>
 

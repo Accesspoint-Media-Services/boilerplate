@@ -7,9 +7,11 @@
                 <?php get_template_part('page-sections/body/blogs/preview'); ?>
             <?php endwhile; ?>
 
-            <div class="blog__archive--navigation">
-                <?php the_posts_navigation(); ?>
-            </div>
+            <?php if ( $GLOBALS['wp_query']->max_num_pages > 1 ) : ?>
+                <div class="blog__archive--navigation">
+                    <?php get_template_part('components/pagination'); ?>
+                </div>
+            <?php endif; ?>
 
         <?php else : ?>
 

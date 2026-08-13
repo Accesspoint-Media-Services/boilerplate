@@ -1,5 +1,32 @@
 .blog {
+
+    &__search {
+        @include background($off-white, $primary-colour);;
+        padding: rem(25px) 0;
+        
+        @media (min-width:1200px){
+            padding: rem(40px) 0
+        }
+    }
     &__archive {
+        padding: rem(55px) 0;
+    
+        @media (min-width:768px){
+            padding: rem(65px) 0
+        }
+
+        @media (min-width:992px){
+            padding: rem(75px) 0
+        }
+
+        @media (min-width:1200px){
+            padding: rem(90px) 0
+        }
+
+        @media (min-width:1440px){
+            padding: rem(120px) 0
+        }
+
         &--inner {
             display: flex;
             flex-wrap: wrap;
@@ -19,27 +46,41 @@
                 }
             }
         }
+        &--navigation {
+            width: 100%;
+        }
     }
     
     &__preview {
-        @include flex-between(column);
+        @include flex-start(column);
         gap: rem(15px);
 
         &--image {
             width: 100%;
             height: rem(350px);
-            border-radius: rem(8px)
+            border-radius: rem(8px);
+            flex-shrink: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         &--meta {
             @include flex-start(column);
             gap: rem(12px);
         }
+        &--categories{ 
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(8px);
+        }
 
         &--category{
-            a {
-
-            }
+            border-radius: rem(50px);
+            border: rem(1px) solid rgba($primary-colour, .35);
+            padding: rem(4px) rem(16px);
+            font-size: rem(14px);
+            color: $purple;
         }
 
         &--title {
@@ -58,7 +99,128 @@
 
         &--content {
             @include flex-between(column);
+            align-items: flex-start;
             gap: rem(30px);
+            height: 100%;
+        }
+    }
+
+    &__single {
+        padding: rem(55px) 0;
+    
+        @media (min-width:768px){
+            padding: rem(65px) 0
+        }
+
+        @media (min-width:992px){
+            padding: rem(75px) 0
+        }
+
+        @media (min-width:1200px){
+            padding: rem(90px) 0
+        }
+
+        @media (min-width:1440px){
+            padding: rem(120px) 0
+        }
+        &--inner {
+            @include flex-start(column);
+            gap: rem(30px);
+        }
+    }
+
+    &__related-posts {
+        @include background($off-white, $primary-colour);
+        padding: rem(25px) 0;
+        
+        @media (min-width:1200px){
+            padding: rem(40px) 0
+        }
+
+        &--intro {
+            @include flex-start(column);
+            gap: rem(15px);
+        }
+
+        &--title {
+            margin-bottom: 0
+        }
+        
+        &--content {
+            p {
+
+            }
+        }
+
+        &--posts {
+            margin-top: rem(30px);
+
+            @media (min-width:1200px){
+                margin-top: rem(50px);
+            }
+        }
+
+        &--slider {
+
+            .slick {
+                &-list{
+                    margin-left:rem(-27px);
+                }
+                &-track{
+                    display: flex !important;
+                }
+                &-slide{
+                    
+                }
+            }
+        }
+
+        &--slide {
+            padding: 0 rem(10px);
+            height: 100%;
+            box-sizing: border-box;
+            height: inherit !important;
+            margin-left:rem(20px);
+        }
+
+        &--controlls {
+            @include flex-center(row);
+            align-items: center;
+            gap: rem(16px);
+            margin-top: rem(25px);
+
+            @media (min-width:1200px){
+                margin-top: rem(35px);
+            }
+        }
+
+        &--arrow {
+            @include flex-center;
+            align-items: center;
+            background: none;
+            border: rem(1px) solid $primary-colour;
+            border-radius: 50%;
+            width: rem(44px);
+            height: rem(44px);
+            cursor: pointer;
+            transition: .6s ease-in-out all;
+            color: $primary-colour;
+            padding: rem(0px);
+
+            i {
+                pointer-events: none;
+            }
+
+            &:hover {
+                background: $primary-colour;
+                color: $off-white;
+            }
+
+            &.slick-disabled {
+                opacity: 0.3;
+                cursor: none;
+                pointer-events: none;
+            }
         }
     }
 }
