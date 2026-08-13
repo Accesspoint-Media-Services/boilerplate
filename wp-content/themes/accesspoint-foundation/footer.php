@@ -3,7 +3,7 @@
 	$company_name = get_field('company_name', 'option') ?: get_bloginfo('name'); 
 ?> 
 
-<footer class="site-footer testing">
+<footer class="site-footer">
 	<div class="site-footer__inner container">
 		<div class="site-footer__inner--legal">
 			<?php if ( ! empty( $site_logo ) ) : ?>

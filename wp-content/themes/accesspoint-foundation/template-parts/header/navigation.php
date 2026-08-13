@@ -2,7 +2,7 @@
   $site_logo = get_field('site_logo', 'options'); 
 ?> 
 
-  <div class="site-header__inner container testing">
+  <div class="site-header__inner container">
     <?php if ( ! empty( $site_logo ) ) : ?>
       <div class="site-header__logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
