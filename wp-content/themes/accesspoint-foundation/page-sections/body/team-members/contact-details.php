@@ -23,8 +23,8 @@
 
             <?php if (have_rows('social_media_links') ) : ?>
                 <?php while (have_rows('social_media_links') ) : the_row(); 
-                    $icon = get_sub_field('icon_class');
-                    $link = get_sub_field('link');
+                    $icon = the_sub_field('icon_class');
+                    $link = the_sub_field('link');
                 ?>
                 <div class="team-members__single--social-item ">
                     <?php if( $link ): 
