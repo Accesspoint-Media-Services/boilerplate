@@ -18,22 +18,19 @@
                 <?php endif;?>
 
 
-                <?php if (have_rows('') ) : ?>
-                    <?php while (have_rows('') ) : the_row(); 
-                        $icon = get_sub_field('social_media_icon');
-                        $link = get_sub_field('link');
+                <?php if (have_rows('social_media_links') ) : ?>
+                    <?php while (have_rows('social_media_links') ) : the_row(); 
+                        $icon = the_sub_field('social_media_icon');
+                        $link = the_sub_field('link');
                     ?>
-
                     <div class="team-members__single--social-item ">
-
                         <?php if( $link ): 
                             $link_url = $link['url'];
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><i class="<?php echo esc_attr( $icon ); ?>"></i> <?php echo esc_html( $link_title ); ?></a>
+                            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><i class="<?php echo esc_attr( $icon ); ?>"></i> <?php echo esc_html( $link_title ); ?></a>
                         <?php endif; ?>
-
                     </div>
 
                     <?php endwhile; ?>
