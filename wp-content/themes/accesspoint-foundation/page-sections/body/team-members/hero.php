@@ -1,13 +1,10 @@
 <?php
     $image = get_field( 'hero_image' ) ?: get_field( 'fallback_team_image', 'option' );
     $team_roles = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_category', array( 'fields' => 'names' ) ) );
-    $team_locations = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_locations', array( 'fields' => 'names' ) ) );
+	$team_locations = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_location', array( 'fields' => 'names' ) ) );
 ?>
 
-<section
-	class="hero-team-members"
-	style="background-image: url('<?php echo esc_url( $image ); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;"
->
+<section class="hero-team-members" style="background-image: url('<?php echo esc_url( $image ); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 	<div class="container">
 		<div class="hero-team-members__content">
 
