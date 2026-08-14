@@ -1,4 +1,4 @@
-<?php if ($email_address or $phone_number) : ?>
+<?php if ($email_address or $phone_number or ) : ?>
     <div class="team-members__single--contact-details">
         
         <h3 class="team-members__single--contact-title">Contact <?php echo esc_html( strtok( get_the_title(), ' ' ) ); ?></h3>
