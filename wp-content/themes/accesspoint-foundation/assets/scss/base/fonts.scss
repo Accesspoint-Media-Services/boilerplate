@@ -25,11 +25,11 @@ a {
     transition: .6s ease-in-out all;
     color: $primary-colour;
 
-    &:visited,
-    &:hover,
-    &:active {
-        color: rgba($primary-colour, .5);
-    }
+    // &:visited,
+    // &:hover,
+    // &:active {
+    //     color: rgba($primary-colour, .5);
+    // }
 }
 
 ul {
