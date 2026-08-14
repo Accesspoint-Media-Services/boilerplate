@@ -1,27 +1,26 @@
-
-<?php if ($email_address or $phone_number) ?>
+<?php if ($email_address or $phone_number) : ?>
     <div class="team-members__single--contact-details">
         
         <h3 class="team-members__single--contact-title">Contact <?php echo esc_html( strtok( get_the_title(), ' ' ) ); ?></h3>
         
-        <?php if ($email_address or $phone_number) ?>
+        <?php if ($email_address or $phone_number) : ?>
             <div class="team-members__single--contact-list">
-                <?php if ($phone_number) ?>
+                <?php if ($phone_number) : ?>
                     <div class="team-members__single--contact-item phone-number">
-                        <a href="tel::<?php echo($phone_number)?>"><?php echo($phone_number)?></a>
+                        <a href="tel:<?php echo esc_attr( $phone_number ); ?>"><?php echo esc_html( $phone_number ); ?></a>
                     </div>
                 <?php endif;?>
-                <?php if ($email_address) ?>
+                <?php if ($email_address) : ?>
                     <div class="team-members__single--contact-item email-address">
-                        <a href="mailto:<?php echo($email_address)?>"><?php echo($email_address)?></a>
+                        <a href="mailto:<?php echo esc_attr( $email_address ); ?>"><?php echo esc_html( $email_address ); ?></a>
                     </div>
                 <?php endif;?>
 
 
                 <?php if (have_rows('social_media_links') ) : ?>
                     <?php while (have_rows('social_media_links') ) : the_row(); 
-                        $icon = the_sub_field('social_media_icon');
-                        $link = the_sub_field('link');
+                        $icon = get_sub_field('icon_class');
+                        $link = get_sub_field('link');
                     ?>
                     <div class="team-members__single--social-item ">
                         <?php if( $link ): 
