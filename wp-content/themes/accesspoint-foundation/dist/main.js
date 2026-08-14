@@ -101,7 +101,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 document.addEventListener('DOMContentLoaded', function () {
   var input = document.getElementById('team-search-input');
   var container = document.querySelector('.team-members__archive--inner');
-  if (!input || !container || typeof ajaxTeamSearchData === 'undefined') {
+  if (!input || !container || typeof ajaxSearchData === 'undefined') {
     return;
   }
   var debounceTimer;
@@ -118,12 +118,12 @@ document.addEventListener('DOMContentLoaded', function () {
             controller = new AbortController();
             formData = new FormData();
             formData.append('action', 'ajax_search_team_members');
-            formData.append('nonce', ajaxTeamSearchData.nonce);
+            formData.append('nonce', ajaxSearchData.nonce);
             formData.append('term', term);
             container.classList.add('is-loading');
             _context.p = 1;
             _context.n = 2;
-            return fetch(ajaxTeamSearchData.ajax_url, {
+            return fetch(ajaxSearchData.ajax_url, {
               method: 'POST',
               body: formData,
               credentials: 'same-origin',

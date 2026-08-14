@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('team-search-input');
     const container = document.querySelector('.team-members__archive--inner');
 
-    if (!input || !container || typeof ajaxTeamSearchData === 'undefined') {
+    if (!input || !container || typeof ajaxSearchData === 'undefined') {
         return;
     }
 
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData();
         formData.append('action', 'ajax_search_team_members');
-        formData.append('nonce', ajaxTeamSearchData.nonce);
+        formData.append('nonce', ajaxSearchData.nonce);
         formData.append('term', term);
 
         container.classList.add('is-loading');
 
         try {
-            const response = await fetch(ajaxTeamSearchData.ajax_url, {
+            const response = await fetch(ajaxSearchData.ajax_url, {
                 method: 'POST',
                 body: formData,
                 credentials: 'same-origin',
