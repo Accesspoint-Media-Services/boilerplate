@@ -1,5 +1,5 @@
 <?php
-    $image = get_field( 'hero_image' ) ?: get_field( 'fallback_team_image', 'option' );
+    $image = get_field( 'hero_image' ) ?: get_field( 'fallback_hero_image', 'option' );
     $team_roles = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_category', array( 'fields' => 'names' ) ) );
 	$team_locations = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_location', array( 'fields' => 'names' ) ) );
 ?>
