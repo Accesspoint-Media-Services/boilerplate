@@ -130,6 +130,20 @@
         color: $white;
       }
 
+      &--role {}
+
+      &--location {
+        @include flex-center(row);
+        align-items: flex-start;
+        gap: rem(12px);
+
+        svg {
+          path {
+            
+          }
+        }
+      }
+
       &--copy {
         p {
           color: $white;
