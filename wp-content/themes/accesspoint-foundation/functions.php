@@ -24,7 +24,7 @@ require get_template_directory() . '/inc/components/blog-search-bar.php';
  * Header & Footer Scripts
  */
 
-require get_template_directory() . '/inc/components/content-widths.php';
+require get_template_directory() . '/inc/components/header-footer-scripts.php';
 
 /**
  * Content widths
