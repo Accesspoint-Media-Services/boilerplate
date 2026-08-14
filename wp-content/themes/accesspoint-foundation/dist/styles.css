@@ -983,6 +983,29 @@ body.nav-open {
   pointer-events: none;
 }
 
+.team-members__single {
+  padding: 3.4375rem 0;
+}
+@media (min-width: 768px) {
+  .team-members__single {
+    padding: 4.0625rem 0;
+  }
+}
+@media (min-width: 992px) {
+  .team-members__single {
+    padding: 4.6875rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .team-members__single {
+    padding: 5.625rem 0;
+  }
+}
+@media (min-width: 1440px) {
+  .team-members__single {
+    padding: 7.5rem 0;
+  }
+}
 .team-members__archive {
   background-color: #fff;
   color: #070e2b;

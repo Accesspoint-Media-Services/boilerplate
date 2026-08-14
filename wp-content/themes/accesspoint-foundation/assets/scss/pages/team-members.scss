@@ -1,4 +1,25 @@
 .team-members {
+    
+    &__single {
+        padding: rem(55px) 0;
+    
+        @media (min-width:768px){
+            padding: rem(65px) 0
+        }
+
+        @media (min-width:992px){
+            padding: rem(75px) 0
+        }
+
+        @media (min-width:1200px){
+            padding: rem(90px) 0
+        }
+
+        @media (min-width:1440px){
+            padding: rem(120px) 0
+        }
+    }
+
     &__archive {
 
         @include background($white, $primary-colour);
