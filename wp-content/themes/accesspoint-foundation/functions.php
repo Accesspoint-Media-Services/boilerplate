@@ -21,12 +21,6 @@ require get_template_directory() . '/inc/components/setup.php';
 require get_template_directory() . '/inc/components/blog-search-bar.php';
 
 /**
- * Team Members AJAX search bar
- */
-
-require get_template_directory() . '/inc/components/team-members-search-bar.php';
-
-/**
  * Content widths
  */
 
