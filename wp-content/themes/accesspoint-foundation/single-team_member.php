@@ -9,7 +9,7 @@ get_header();
 ?>
     <main>
 
-		
+		<?php get_template_part( 'page-sections/body/team-members/search-bar' ); ?>
 		<?php get_template_part( 'page-sections/body/team-members/single' ); ?>
 
 	</main>

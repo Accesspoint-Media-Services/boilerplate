@@ -1,6 +1,7 @@
 
 import '/assets/js/menu.js';
 import '/assets/js/ajax-search.js';
+import '/assets/js/ajax-team-member-search.js';
 import '/assets/js/clickbox.js';
 import '/assets/js/sliders.js';
 import '/assets/js/back-to-top-button.js';
