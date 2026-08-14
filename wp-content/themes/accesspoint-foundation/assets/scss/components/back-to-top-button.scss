@@ -1,0 +1,28 @@
+.back-to-top {
+  @include flex-center(row);
+  position: fixed;
+  bottom: rem(30px);
+  right: rem(30px);
+  width: rem(48px);
+  height: rem(48px);
+  border-radius: 50%;
+  background: $purple;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(rem(10px));
+  transition: .3s ease-in-out all;
+  z-index: 50;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background: rgba($black, .8);
+  }
+}
