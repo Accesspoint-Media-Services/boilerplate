@@ -7,31 +7,32 @@
 
 <section class="hero-blog">
   <div class="hero-blog__inner container">
-      <div class="hero-blog__inner--content">
+        <div class="hero-blog__inner--content">
 
-          <?php if ( ! empty($categories) ): ?>
-              <div class="hero-blog__inner--categories">
-                  <?php foreach ($categories as $category): ?>
-                      <?php echo esc_html($category->name); ?>
-                  <?php endforeach; ?>
-              </div>
-          <?php endif; ?>
+            <time class="hero-blog__inner--date" datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
+                <?php echo esc_html( get_the_date() ); ?>
+            </time>
 
-          <h1 class="hero-blog__inner--title"><?php echo esc_html($title); ?></h1>
+            <?php if ( ! empty($categories) ): ?>
+                <div class="hero-blog__inner--categories">
+                    <?php foreach ($categories as $category): ?>
+                        <?php echo esc_html($category->name); ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
 
-          <?php if ($content): ?>
-              <div class="hero-blog__inner--excerpt">
-                  <?php echo wp_kses_post($content); ?>
-              </div>
-          <?php endif; ?>
+            <h1 class="hero-blog__inner--title"><?php echo esc_html($title); ?></h1>
 
-          <time class="hero-blog__inner--date" datetime="<?php echo esc_attr( get_the_date('c') ); ?>">
-              <?php echo esc_html( get_the_date() ); ?>
-          </time>
-      </div>
-  
-      <div class="hero-blog__inner--image">
-        <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" />
-      </div>
+            <?php if ($content): ?>
+                <div class="hero-blog__inner--excerpt">
+                    <?php echo wp_kses_post($content); ?>
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+        <div class="hero-blog__inner--image">
+            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" />
+        </div>
   </div>
 </section>
