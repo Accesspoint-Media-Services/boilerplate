@@ -13,6 +13,10 @@
       &:hover {
         background: rgba($value, .8)
       }
+
+      @if $name == 'button-primary-colour' {
+       color: $white;
+      }
     }
   }
 }
