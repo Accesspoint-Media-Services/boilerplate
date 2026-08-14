@@ -26,7 +26,7 @@
               <?php endif ; ?>
 
               <?php if ($content or $link ): ?>
-                <div class="text-image__inner--copy wys-reset">
+                <div class="text-image__inner--copy">
                   <?php echo $content ?>
 
                   <?php if( $link ):
