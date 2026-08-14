@@ -2,7 +2,7 @@
   $title = get_field('title') ?: get_the_title(); 
   $content = get_field('content');
   $image = get_field('hero_image') ?: get_field('fallback_hero_image', 'option');
-  $link = get_field('hero_link')
+  $link = get_field('link')
 ?>
 
 <section class="hero" style="background-image: url('<?php echo esc_url($image); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat">
