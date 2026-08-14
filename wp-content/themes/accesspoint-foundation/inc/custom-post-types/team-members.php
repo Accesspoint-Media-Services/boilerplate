@@ -2,7 +2,7 @@
 /**
  * Team Members Custom Post Type.
  *
- * @package YourTheme
+ * @package accesspoint-foundation
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -15,30 +15,30 @@ defined( 'ABSPATH' ) || exit;
 function teamMembers() {
 
 	$labels = array(
-		'name'                  => _x( 'Team Members', 'Post type general name', 'yourtheme' ),
-		'singular_name'         => _x( 'Team Member', 'Post type singular name', 'yourtheme' ),
-		'menu_name'             => _x( 'Team Members', 'Admin menu text', 'yourtheme' ),
-		'name_admin_bar'        => _x( 'Team Member', 'Add New toolbar text', 'yourtheme' ),
-		'add_new'               => __( 'Add New', 'yourtheme' ),
-		'add_new_item'          => __( 'Add New Team Member', 'yourtheme' ),
-		'new_item'              => __( 'New Team Member', 'yourtheme' ),
-		'edit_item'             => __( 'Edit Team Member', 'yourtheme' ),
-		'view_item'             => __( 'View Team Member', 'yourtheme' ),
-		'all_items'             => __( 'All Team Members', 'yourtheme' ),
-		'search_items'          => __( 'Search Team Members', 'yourtheme' ),
-		'parent_item_colon'     => __( 'Parent Team Member:', 'yourtheme' ),
-		'not_found'             => __( 'No team members found.', 'yourtheme' ),
-		'not_found_in_trash'    => __( 'No team members found in Trash.', 'yourtheme' ),
-		'featured_image'        => __( 'Team Member Photo', 'yourtheme' ),
-		'set_featured_image'    => __( 'Set team member photo', 'yourtheme' ),
-		'remove_featured_image' => __( 'Remove team member photo', 'yourtheme' ),
-		'use_featured_image'    => __( 'Use as team member photo', 'yourtheme' ),
-		'archives'              => __( 'Team Member Archives', 'yourtheme' ),
-		'insert_into_item'      => __( 'Insert into team member', 'yourtheme' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this team member', 'yourtheme' ),
-		'filter_items_list'     => __( 'Filter team members list', 'yourtheme' ),
-		'items_list_navigation' => __( 'Team members list navigation', 'yourtheme' ),
-		'items_list'            => __( 'Team members list', 'yourtheme' ),
+		'name'                  => _x( 'Team Members', 'Post type general name', 'accesspoint-foundation' ),
+		'singular_name'         => _x( 'Team Member', 'Post type singular name', 'accesspoint-foundation' ),
+		'menu_name'             => _x( 'Team Members', 'Admin menu text', 'accesspoint-foundation' ),
+		'name_admin_bar'        => _x( 'Team Member', 'Add New toolbar text', 'accesspoint-foundation' ),
+		'add_new'               => __( 'Add New', 'accesspoint-foundation' ),
+		'add_new_item'          => __( 'Add New Team Member', 'accesspoint-foundation' ),
+		'new_item'              => __( 'New Team Member', 'accesspoint-foundation' ),
+		'edit_item'             => __( 'Edit Team Member', 'accesspoint-foundation' ),
+		'view_item'             => __( 'View Team Member', 'accesspoint-foundation' ),
+		'all_items'             => __( 'All Team Members', 'accesspoint-foundation' ),
+		'search_items'          => __( 'Search Team Members', 'accesspoint-foundation' ),
+		'parent_item_colon'     => __( 'Parent Team Member:', 'accesspoint-foundation' ),
+		'not_found'             => __( 'No team members found.', 'accesspoint-foundation' ),
+		'not_found_in_trash'    => __( 'No team members found in Trash.', 'accesspoint-foundation' ),
+		'featured_image'        => __( 'Team Member Photo', 'accesspoint-foundation' ),
+		'set_featured_image'    => __( 'Set team member photo', 'accesspoint-foundation' ),
+		'remove_featured_image' => __( 'Remove team member photo', 'accesspoint-foundation' ),
+		'use_featured_image'    => __( 'Use as team member photo', 'accesspoint-foundation' ),
+		'archives'              => __( 'Team Member Archives', 'accesspoint-foundation' ),
+		'insert_into_item'      => __( 'Insert into team member', 'accesspoint-foundation' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this team member', 'accesspoint-foundation' ),
+		'filter_items_list'     => __( 'Filter team members list', 'accesspoint-foundation' ),
+		'items_list_navigation' => __( 'Team members list navigation', 'accesspoint-foundation' ),
+		'items_list'            => __( 'Team members list', 'accesspoint-foundation' ),
 	);
 
 	$args = array(
@@ -91,7 +91,7 @@ function teamMembers() {
 		),
 
 		// Optional archive title used in menus and admin screens.
-		'description' => __( 'Team members displayed across the website.', 'yourtheme' ),
+		'description' => __( 'Team members displayed across the website.', 'accesspoint-foundation' ),
 	);
 
 	register_post_type( 'team_member', $args );
@@ -99,7 +99,7 @@ function teamMembers() {
 add_action( 'init', 'teamMembers' );
 
 /**
- * Register the Team Categories taxonomy.
+ * Register the Team Role taxonomy.
  *
  * This behaves like standard WordPress categories, including support for
  * parent and child terms.
@@ -109,19 +109,19 @@ add_action( 'init', 'teamMembers' );
 function teamMembersTaxonomy() {
 
 	$labels = array(
-		'name'              => _x( 'Team Categories', 'Taxonomy general name', 'yourtheme' ),
-		'singular_name'     => _x( 'Team Category', 'Taxonomy singular name', 'yourtheme' ),
-		'search_items'      => __( 'Search Team Categories', 'yourtheme' ),
-		'all_items'         => __( 'All Team Categories', 'yourtheme' ),
-		'parent_item'       => __( 'Parent Team Category', 'yourtheme' ),
-		'parent_item_colon' => __( 'Parent Team Category:', 'yourtheme' ),
-		'edit_item'         => __( 'Edit Team Category', 'yourtheme' ),
-		'update_item'       => __( 'Update Team Category', 'yourtheme' ),
-		'add_new_item'      => __( 'Add New Team Category', 'yourtheme' ),
-		'new_item_name'     => __( 'New Team Category Name', 'yourtheme' ),
-		'menu_name'         => __( 'Team Categories', 'yourtheme' ),
-		'not_found'         => __( 'No team categories found.', 'yourtheme' ),
-		'back_to_items'     => __( 'Back to Team Categories', 'yourtheme' ),
+		'name'              => _x( 'Team Role', 'Taxonomy general name', 'accesspoint-foundation' ),
+		'singular_name'     => _x( 'Team Category', 'Taxonomy singular name', 'accesspoint-foundation' ),
+		'search_items'      => __( 'Search Team Role', 'accesspoint-foundation' ),
+		'all_items'         => __( 'All Team Role', 'accesspoint-foundation' ),
+		'parent_item'       => __( 'Parent Team Category', 'accesspoint-foundation' ),
+		'parent_item_colon' => __( 'Parent Team Category:', 'accesspoint-foundation' ),
+		'edit_item'         => __( 'Edit Team Category', 'accesspoint-foundation' ),
+		'update_item'       => __( 'Update Team Category', 'accesspoint-foundation' ),
+		'add_new_item'      => __( 'Add New Team Category', 'accesspoint-foundation' ),
+		'new_item_name'     => __( 'New Team Category Name', 'accesspoint-foundation' ),
+		'menu_name'         => __( 'Team Role', 'accesspoint-foundation' ),
+		'not_found'         => __( 'No Team Role found.', 'accesspoint-foundation' ),
+		'back_to_items'     => __( 'Back to Team Role', 'accesspoint-foundation' ),
 	);
 
 	$args = array(
@@ -169,19 +169,19 @@ add_action( 'init', 'teamMembersTaxonomy' );
 function teamMembersLocationTaxonomy() {
 
 	$labels = array(
-		'name'              => _x( 'Team Locations', 'Taxonomy general name', 'yourtheme' ),
-		'singular_name'     => _x( 'Team Location', 'Taxonomy singular name', 'yourtheme' ),
-		'search_items'      => __( 'Search Team Locations', 'yourtheme' ),
-		'all_items'         => __( 'All Team Locations', 'yourtheme' ),
-		'parent_item'       => __( 'Parent Team Location', 'yourtheme' ),
-		'parent_item_colon' => __( 'Parent Team Location:', 'yourtheme' ),
-		'edit_item'         => __( 'Edit Team Location', 'yourtheme' ),
-		'update_item'       => __( 'Update Team Location', 'yourtheme' ),
-		'add_new_item'      => __( 'Add New Team Location', 'yourtheme' ),
-		'new_item_name'     => __( 'New Team Location Name', 'yourtheme' ),
-		'menu_name'         => __( 'Team Locations', 'yourtheme' ),
-		'not_found'         => __( 'No team locations found.', 'yourtheme' ),
-		'back_to_items'     => __( 'Back to Team Locations', 'yourtheme' ),
+		'name'              => _x( 'Team Locations', 'Taxonomy general name', 'accesspoint-foundation' ),
+		'singular_name'     => _x( 'Team Location', 'Taxonomy singular name', 'accesspoint-foundation' ),
+		'search_items'      => __( 'Search Team Locations', 'accesspoint-foundation' ),
+		'all_items'         => __( 'All Team Locations', 'accesspoint-foundation' ),
+		'parent_item'       => __( 'Parent Team Location', 'accesspoint-foundation' ),
+		'parent_item_colon' => __( 'Parent Team Location:', 'accesspoint-foundation' ),
+		'edit_item'         => __( 'Edit Team Location', 'accesspoint-foundation' ),
+		'update_item'       => __( 'Update Team Location', 'accesspoint-foundation' ),
+		'add_new_item'      => __( 'Add New Team Location', 'accesspoint-foundation' ),
+		'new_item_name'     => __( 'New Team Location Name', 'accesspoint-foundation' ),
+		'menu_name'         => __( 'Team Locations', 'accesspoint-foundation' ),
+		'not_found'         => __( 'No team locations found.', 'accesspoint-foundation' ),
+		'back_to_items'     => __( 'Back to Team Locations', 'accesspoint-foundation' ),
 	);
 
 	$args = array(
