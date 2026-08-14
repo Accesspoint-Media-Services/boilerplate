@@ -1,6 +1,7 @@
 <?php
     $image = get_field( 'hero_image' ) ?: get_field( 'fallback_team_image', 'option' );
     $team_roles = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_category', array( 'fields' => 'names' ) ) );
+    $team_locations = implode( ', ', wp_get_post_terms( get_the_ID(), 'team_locations', array( 'fields' => 'names' ) ) );
 ?>
 
 <section
@@ -17,6 +18,12 @@
             <?php if ( $team_roles ) : ?>
                 <h3 class="hero-team-members__content--role">
                     <?php echo esc_html( $team_roles ); ?>
+                </h3>
+            <?php endif; ?>
+
+            <?php if ( $team_locations ) : ?>
+                <h3 class="hero-team-members__content--location">
+                    <?php echo esc_html( $team_locations ); ?>
                 </h3>
             <?php endif; ?>
 
