@@ -1,5 +1,5 @@
 <?php
-	$team_preview_image = has_post_thumbnail()? get_the_post_thumbnail_url( get_the_ID(), 'full' ): get_field( 'team_hero_image', 'option' );
+	$team_preview_image = has_post_thumbnail()? get_the_post_thumbnail_url( get_the_ID(), 'full' ) : ( get_field( 'team_hero_image', 'option' ) ?: get_field( 'team_member_fallback_image', 'option' ) );
 	$team_categories = get_the_terms( get_the_ID(), 'team_category' );
 	$team_locations = get_the_terms( get_the_ID(), 'team_location' );
 ?>
