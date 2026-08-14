@@ -133,13 +133,13 @@
       &--role {}
 
       &--location {
-        @include flex-center(row);
+        @include flex-start(row);
         align-items: flex-start;
         gap: rem(12px);
 
         svg {
           path {
-            
+
           }
         }
       }
