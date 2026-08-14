@@ -21,6 +21,12 @@ require get_template_directory() . '/inc/components/setup.php';
 require get_template_directory() . '/inc/components/blog-search-bar.php';
 
 /**
+ * Header & Footer Scripts
+ */
+
+require get_template_directory() . '/inc/components/content-widths.php';
+
+/**
  * Content widths
  */
 

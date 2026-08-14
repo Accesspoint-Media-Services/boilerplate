@@ -4,7 +4,7 @@
 	$team_locations = get_the_terms( get_the_ID(), 'team_location' );
 ?>
 
-<div class="team-members__preview" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
+<div class="team-members__preview br-20" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
 
 	<div class="team-members__preview--image" style="background-image: url('<?php echo esc_url( $team_preview_image ); ?>');"></div>
 
