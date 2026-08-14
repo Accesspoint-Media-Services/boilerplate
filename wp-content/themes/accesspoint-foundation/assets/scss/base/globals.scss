@@ -48,6 +48,10 @@ body {
   a {
     color: inherit;
     text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
   }
 
   // images (WP often adds inline sizing/classes)
