@@ -16,6 +16,7 @@
 
   &__content {
     @include flex-start(column);
+    align-items: flex-start;
     gap: rem(20px);
     color: $white;
     position: relative;
