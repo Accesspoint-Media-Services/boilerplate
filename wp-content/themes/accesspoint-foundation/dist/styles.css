@@ -232,6 +232,35 @@ ul {
   padding: 0;
 }
 
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 1.875rem;
+  right: 1.875rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #130668;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.625rem);
+  transition: 0.3s ease-in-out all;
+  z-index: 50;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: rgba(19, 6, 104, 0.8);
+}
+
 .site-header {
   background-color: #f7f9fb;
   color: #070e2b;
