@@ -122,11 +122,6 @@ ul {
     max-width: 1140px;
   }
 }
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1260px;
-  }
-}
 @media (min-width: 1440px) {
   .container {
     max-width: 1300px;
