@@ -23,7 +23,7 @@
 			<div class="site-footer__inner--links">
 
 				<?php if( have_rows('footer_links', 'options') ): ?>
-					<div class="site-footer__inner--page-links">
+					<div class="site-footer__inner--page-links test-class-name">
 						<ul class="site-footer__inner--link-list">
 							<?php while( have_rows('footer_links', 'options') ) : the_row(); ?>
 								<?php $link = get_sub_field('link', 'options');
