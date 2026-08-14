@@ -20,7 +20,7 @@
 
             <?php if ( $team_locations ) : ?>
                 <h3 class="hero-team-members__content--location">
-                    <?php echo esc_html( $team_locations ); ?>
+                    <?php echo file_get_contents( get_template_directory() . '/assets/images/icons/svgs/location-pin.svg' ); ?><?php echo esc_html( $team_locations ); ?>
                 </h3>
             <?php endif; ?>
 
