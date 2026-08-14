@@ -20,7 +20,7 @@
 		</div>
 		
 		<?php if( have_rows('footer_links', 'options') || have_rows('social_links', 'options') ): ?>
-			<div class="site-footer__inner--links test-class">
+			<div class="site-footer__inner--links">
 
 				<?php if( have_rows('footer_links', 'options') ): ?>
 					<div class="site-footer__inner--page-links">
