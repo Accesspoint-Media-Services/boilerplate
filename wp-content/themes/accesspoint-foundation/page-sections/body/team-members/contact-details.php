@@ -23,7 +23,7 @@
 
 			<?php if ( $social_media_links ) : ?>
 				<?php foreach ( $social_media_links as $row ) :
-					$icon = $row['icon_class'];
+					$icon = $row['social_media_icon'];
 					$link = $row['link'];
 				?>
 					<div class="team-members__single--social-item">
