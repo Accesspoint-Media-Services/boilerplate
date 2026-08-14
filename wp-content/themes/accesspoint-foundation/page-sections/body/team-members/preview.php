@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="team-members__preview--link">
-			<a href="<?php the_permalink(); ?>" class="button button-primary">
+			<a href="<?php the_permalink(); ?>" class="button button-primary-colour">
 				View <?php echo esc_html( strtok( get_the_title(), ' ' ) ); ?>
 			</a>
 		</div>
