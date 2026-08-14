@@ -1006,6 +1006,9 @@ body.nav-open {
     padding: 7.5rem 0;
   }
 }
+.team-members__single--contact-title {
+  margin-bottom: 1.0625rem;
+}
 .team-members__single--contact-list {
   display: flex;
   justify-content: flex-start;

@@ -22,17 +22,34 @@
 
         &--inner {}
 
-        &--contact-details {}
-        &--contact-title {}
+        &--contact-title {
+            margin-bottom: rem(17px)
+        }
+
+        &--contact-details {
+
+        }
+
+        &--contact-title {
+
+        }
+
         &--contact-list {
             @include flex-start(column);
             align-items: flex-start;
             gap: rem(12px)
         }
+
         &--contact-item {
-            &.phone-number{}
-            &.email-address{}
+            &.phone-number{
+
+            }
+
+            &.email-address{
+                
+            }
         }
+
         &--social-item {
             a {
                 i {
