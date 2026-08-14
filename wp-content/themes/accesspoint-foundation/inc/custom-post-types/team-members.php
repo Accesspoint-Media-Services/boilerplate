@@ -84,9 +84,10 @@ function teamMembers() {
 			'custom-fields',
 		),
 
-		// Connect the custom taxonomy to the post type.
+		// Connect the custom taxonomies to the post type.
 		'taxonomies' => array(
 			'team_category',
+			'team_location',
 		),
 
 		// Optional archive title used in menus and admin screens.
@@ -156,3 +157,63 @@ function teamMembersTaxonomy() {
 	);
 }
 add_action( 'init', 'teamMembersTaxonomy' );
+
+/**
+ * Register the Team Locations taxonomy.
+ *
+ * This behaves like standard WordPress categories, including support for
+ * parent and child terms.
+ *
+ * @return void
+ */
+function teamMembersLocationTaxonomy() {
+
+	$labels = array(
+		'name'              => _x( 'Team Locations', 'Taxonomy general name', 'yourtheme' ),
+		'singular_name'     => _x( 'Team Location', 'Taxonomy singular name', 'yourtheme' ),
+		'search_items'      => __( 'Search Team Locations', 'yourtheme' ),
+		'all_items'         => __( 'All Team Locations', 'yourtheme' ),
+		'parent_item'       => __( 'Parent Team Location', 'yourtheme' ),
+		'parent_item_colon' => __( 'Parent Team Location:', 'yourtheme' ),
+		'edit_item'         => __( 'Edit Team Location', 'yourtheme' ),
+		'update_item'       => __( 'Update Team Location', 'yourtheme' ),
+		'add_new_item'      => __( 'Add New Team Location', 'yourtheme' ),
+		'new_item_name'     => __( 'New Team Location Name', 'yourtheme' ),
+		'menu_name'         => __( 'Team Locations', 'yourtheme' ),
+		'not_found'         => __( 'No team locations found.', 'yourtheme' ),
+		'back_to_items'     => __( 'Back to Team Locations', 'yourtheme' ),
+	);
+
+	$args = array(
+		'labels' => $labels,
+
+		// True makes this category-style rather than tag-style.
+		'hierarchical' => true,
+
+		'public'            => true,
+		'publicly_queryable'=> true,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'show_tagcloud'     => false,
+
+		// Gutenberg and REST API support.
+		'show_in_rest' => true,
+
+		// Term URL configuration.
+		'rewrite' => array(
+			'slug'         => 'team/location',
+			'with_front'   => false,
+			'hierarchical' => true,
+		),
+
+		'query_var' => true,
+	);
+
+	register_taxonomy(
+		'team_location',
+		array( 'team_member' ),
+		$args
+	);
+}
+add_action( 'init', 'teamMembersLocationTaxonomy' );
