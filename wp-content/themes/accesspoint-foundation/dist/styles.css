@@ -168,6 +168,9 @@ ul {
 .button-primary-colour:hover {
   background: rgba(7, 14, 43, 0.8);
 }
+.button-primary-colour {
+  color: #fff;
+}
 .button-secondary-colour {
   background: #13DCF2;
 }

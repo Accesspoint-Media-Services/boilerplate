@@ -14,7 +14,7 @@
         background: rgba($value, .8)
       }
 
-      @if $name == 'button-primary-colour' {
+      @if $name == 'primary-colour' {
        color: $white;
       }
     }
