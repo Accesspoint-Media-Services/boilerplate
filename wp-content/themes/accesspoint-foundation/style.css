@@ -503,6 +503,7 @@ dd {
 }
 
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
@@ -525,11 +526,8 @@ table {
 
 /* Links
 --------------------------------------------- */
-a {
-	color: #4169e1;
-}
 
-a:hover,
+/* a:hover,
 a:focus,
 a:active {
 	color: #191970;
@@ -542,7 +540,7 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
-}
+} */
 
 /* Forms
 --------------------------------------------- */
@@ -766,15 +764,6 @@ textarea {
 	display: block;
 }
 
-/* Widgets
---------------------------------------------- */
-.widget {
-	margin: 0 0 1.5em;
-}
-
-.widget select {
-	max-width: 100%;
-}
 
 /* Media
 --------------------------------------------- */
@@ -785,11 +774,6 @@ textarea {
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
 }
 
 /* Captions
