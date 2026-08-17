@@ -48,6 +48,11 @@ body {
   a {
     color: inherit;
     text-decoration: none;
+    transition: .6s ease-in-out all;
+
+    &:hover {
+      color: $purple;
+    }
 
     &:visited {
       color: inherit;
