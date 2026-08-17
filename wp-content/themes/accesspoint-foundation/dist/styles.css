@@ -35,7 +35,7 @@ body {
   list-style: none;
 }
 .wys-reset a {
-  color: inherit;
+  color: #070e2b;
   text-decoration: none;
   transition: 0.6s ease-in-out all;
 }
